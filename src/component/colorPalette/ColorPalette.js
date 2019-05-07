@@ -1,4 +1,4 @@
-import React, { Component } from "react"
+import React, { Component } from "react";
 
 export default class ColorPalette extends Component{
     constructor(){
@@ -10,7 +10,7 @@ export default class ColorPalette extends Component{
 
     render(){
         return(
-            <div>
+            <div className="colorPalette-section">
                 <p>{this.state.test}</p>
             </div>
         )
