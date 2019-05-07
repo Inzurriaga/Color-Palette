@@ -1,4 +1,3 @@
-const toggleProjectDisplay  = (bool) => ({
-    type: "TOGGLE_PROJECT",
-    bool
+export const toggleProjectDisplay  = () => ({
+    type: "TOGGLE_PROJECT"
 })

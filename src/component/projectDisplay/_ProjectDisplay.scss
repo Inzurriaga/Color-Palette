@@ -1,6 +1,8 @@
 .project-section {
     grid-area: projects;
     background-color: #F0F0F0;
+    width: 0;
+    transition: 0.3s;
     div {
         height: 150px;
         display: flex;
@@ -16,4 +18,8 @@
             }
         }
     }
+}
+
+.overflow {
+    width: 30vw;
 }

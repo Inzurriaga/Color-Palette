@@ -1,6 +1,8 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { toggleProjectDisplay } from "../../action"
 
-export default class Header extends Component{
+export  class Header extends Component{
     constructor(){
         super();
         this.state = {
@@ -17,9 +19,15 @@ export default class Header extends Component{
                 <nav>
                     <button className="refresh"></button>
                     <button className="save"></button>
-                    <button className="projects"></button>
+                    <button className="projects" onClick={this.props.toggleProjectDisplay}></button>
                 </nav>
             </header>
         )
     }
 }
+
+export const mapDispatchToProps = (dispatch) => ({
+    toggleProjectDisplay: () => dispatch(toggleProjectDisplay())
+})
+
+export default connect(null, mapDispatchToProps)(Header)
