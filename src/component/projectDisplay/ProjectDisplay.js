@@ -10,9 +10,16 @@ export default class ProjectDisplay extends Component{
 
     render(){
         return(
-            <div className="project-section">
-                <p>{this.state.test}</p>
-            </div>
+            <section className="project-section">
+                <div>
+                    <div>
+                        <h2>Projects</h2>
+                    </div>
+                </div>
+                <ul>
+
+                </ul>
+            </section>
         )
     }
 }

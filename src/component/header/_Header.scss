@@ -5,6 +5,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: solid 5px #334A6E;
     div {
         background-color: #FFB934;
         padding: 10px;
@@ -28,6 +29,16 @@ header {
 }
 
 .save {
+    background-color: #ffffff;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    height: 50px;
+    width: 100px;
+    margin: 0px 1px;
+}
+
+.projects {
     background-color: #ffffff;
     cursor: pointer;
     outline: none;

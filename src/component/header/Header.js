@@ -17,6 +17,7 @@ export default class Header extends Component{
                 <nav>
                     <button className="refresh"></button>
                     <button className="save"></button>
+                    <button className="projects"></button>
                 </nav>
             </header>
         )
