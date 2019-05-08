@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { toggleProjectDisplay, generateColorPalette } from "../../action"
+import { toggleProjectDisplay, generateColorPalette, toggleSaveModal } from "../../action"
 
 export  class Header extends Component{
     constructor(){
@@ -18,7 +18,7 @@ export  class Header extends Component{
                 </div>
                 <nav>
                     <button className="refresh" onClick={this.props.generateColorPalette}></button>
-                    <button className="save"></button>
+                    <button className="save" onClick={this.props.toggleSaveModal}></button>
                     <button className="projects" onClick={this.props.toggleProjectDisplay}></button>
                 </nav>
             </header>
@@ -28,7 +28,9 @@ export  class Header extends Component{
 
 export const mapDispatchToProps = (dispatch) => ({
     toggleProjectDisplay: () => dispatch(toggleProjectDisplay()),
-    generateColorPalette: () => dispatch(generateColorPalette())
+    generateColorPalette: () => dispatch(generateColorPalette()),
+    toggleSaveModal: () => dispatch(toggleSaveModal())
 })
+
 
 export default connect(null, mapDispatchToProps)(Header)
