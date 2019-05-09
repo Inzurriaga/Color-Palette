@@ -1,13 +1,22 @@
 import React, { Component } from "react";
 import { connect } from "react-redux" 
+import ProjectCard from "../projectCard/ProjectCard";
 
 
 export class ProjectDisplay extends Component{
-    constructor(){
-        super();
-        this.state = {
-            test: "hello im the display test"
-        }
+
+    combineProjectsPalette = () => {
+        const { projectPalettes, projects } = this.props
+        let array = projects.map(projects => {
+            return {
+                name: projects.name,
+                id: projects.id,
+                palette: projectPalettes.filter(palette => {
+                    return palette.projectsId === projects.id
+                })
+            }
+        })
+        return array
     }
 
     render(){
@@ -18,19 +27,29 @@ export class ProjectDisplay extends Component{
             }
         }else{
             display = {
-                width: 0
+                width: "1px"
             }
         }
+
+        let combineProjects = this.combineProjectsPalette()
+        
+        let projects = combineProjects.map(project => {
+            return (
+                <ProjectCard key={project.id} project={project}/>
+            )
+        })
         return(
             <section style={display} className="project-section">
                 <div className="overflow">
-                    <div>
+                    <div className="project-title">
                         <div>
                             <h2>Projects</h2>
                         </div>
                     </div>
                     <ul>
-
+                        {
+                            projects
+                        }
                     </ul>
                 </div>
             </section>
@@ -39,7 +58,9 @@ export class ProjectDisplay extends Component{
 }
 
 export const mapStateToProps = (state) => ({
-    toggleProjectDisplay: state.toggleProjectDisplay
+    toggleProjectDisplay: state.toggleProjectDisplay,
+    projects: state.projects,
+    projectPalettes: state.projectPalettes
 })
 
 export default connect(mapStateToProps)(ProjectDisplay)

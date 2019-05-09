@@ -13,7 +13,7 @@ export  class ColorPalette extends Component{
                 {
                     this.props.colorPalette.map((color, index) => {
                         return(
-                            <div className="color" id={index} style={{"background-color": color}}>
+                            <div className="color" id={index} key={index} style={{"backgroundColor": color}}>
                                 <p>{color}</p>
                             </div>
                         )

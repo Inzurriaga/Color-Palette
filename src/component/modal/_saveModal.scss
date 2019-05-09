@@ -23,6 +23,7 @@
     }
     label {
         input {
+            font-family: 'Fredoka One', cursive;
             padding: 5px;
             font-size: 2em;
             border: none;
@@ -60,7 +61,8 @@
     width: 60%;
     div {
         border-radius: 5px;
-        height: 20px;
-        width: 20px;
+        border: 1px solid #ffffff;
+        height: 30px;
+        width: 30px;
     }
 }

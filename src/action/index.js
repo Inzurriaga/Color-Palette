@@ -10,3 +10,23 @@ export const generateColorPalette = (palette) => ({
 export const toggleSaveModal = () => ({
     type: "TOGGLE_SAVE"
 })
+
+export const initialProjects = (projects) => ({
+    type: "INITIAL_PROJECTS",
+    projects
+})
+
+export const addNewProject = (project) => ({
+    type: "ADD_PROJECT",
+    project
+})
+
+export const initialPalette = (palettes) =>({
+    type: "INITIAL_PALETTE",
+    palettes
+})
+
+export const addNewPalette = (palette) => ({
+    type: "ADD_PALETTE", 
+    palette
+})

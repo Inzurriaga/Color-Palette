@@ -1,26 +1,35 @@
 .project-section {
     grid-area: projects;
     background-color: #F0F0F0;
-    width: 0;
     transition: 0.3s;
-    div {
-        height: 150px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        div {
-            height: 58px;
-            background-color: #FFB934;
-            padding: 0px 30px;
-            border-radius: 5px;
-            h2 {
-                color: #000000;
-            }
-        }
+    width: 1px;
+    display: block;
+    overflow-x: hidden;
+    ul {
+        overflow: scroll;
+        padding: 0px;
     }
 }
 
 .overflow {
-    width: 30vw;
+    height: 150px;
+}
+
+.project-title  {
+    margin: 0px auto;
+    width: 15vw;
     overflow: hidden;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    div {
+        height: 58px;
+        background-color: #FFB934;
+        padding: 0px 30px;
+        border-radius: 5px;
+    h2 {
+        color: #000000;
+    }
+    }
 }

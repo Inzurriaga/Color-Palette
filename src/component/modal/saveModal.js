@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { toggleSaveModal } from "../../action"
+import { toggleSaveModal, addNewPalette, addNewProject } from "../../action"
 
 export class SaveModal extends Component{
     constructor(){
@@ -25,13 +25,40 @@ export class SaveModal extends Component{
 
     submitPalette = (e) => {
         e.preventDefault()
-        this.props.toggleSaveModal()
+        const titleCheck = this.props.projects.find(project =>  project.name === this.state.projectName)
+        if(titleCheck){
+            this.createNewPalette(titleCheck.id);
+        }else{
+            this.createNewProject();
+        }
+        this.props.toggleSaveModal();
+    }
+
+    createNewPalette = (id) => {
+        const { paletteName } = this.state
+        const palette = this.props.colorPalette.reduce((acc, color, index) => {
+            acc[`color${index+1}`] = color
+            return acc
+        }, {})
+        const newPalette = {...palette, name: paletteName, id: Date.now(), projectsId: id }
+        this.props.addNewPalette(newPalette)
+    }
+
+    createNewProject = () => {
+        const { projectName } = this.state
+        const id = Date.now()
+        const newProject = {
+            id,
+            name: projectName
+        }
+        this.createNewPalette(id)
+        this.props.addNewProject(newProject)
     }
 
     render(){
-        let colorPalette = this.props.colorPalette.map(color => {
+        let colorPalette = this.props.colorPalette.map((color, index) => {
             return (
-                <div className="color" style={{"background-color": color}}>
+                <div key={index} className="color" style={{"backgroundColor": color}}>
 
                 </div>
             )
@@ -61,11 +88,14 @@ export class SaveModal extends Component{
 }
 
 export const mapDispatchToProps = (dispatch) => ({
-    toggleSaveModal: () => dispatch(toggleSaveModal())
+    toggleSaveModal: () => dispatch(toggleSaveModal()),
+    addNewPalette: (projectId, palette) => dispatch(addNewPalette(projectId, palette)),
+    addNewProject: project => dispatch(addNewProject(project))
 })
 
 export const mapStateToProps = (state) => ({
-    colorPalette: state.colorPalette
+    colorPalette: state.colorPalette,
+    projects: state.projects
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(SaveModal)
