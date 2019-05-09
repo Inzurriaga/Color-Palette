@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One');
+
+html, body, #root {
+    margin: 0px;
+    font-family: 'Fredoka One', cursive;
+}
+
+@import "./component/app/App";
+@import "./component/header/Header";
+@import "./component/colorPalette/ColorPalette";
+@import "./component/projectDisplay/ProjectDisplay";
+@import "./component/modal/saveModal";

@@ -1,6 +1,8 @@
 import React, { Component } from "react";
+import { connect } from "react-redux" 
 
-export default class ProjectDisplay extends Component{
+
+export class ProjectDisplay extends Component{
     constructor(){
         super();
         this.state = {
@@ -9,10 +11,35 @@ export default class ProjectDisplay extends Component{
     }
 
     render(){
+        let display;
+        if(this.props.toggleProjectDisplay){
+            display = {
+                width: "30vw"
+            }
+        }else{
+            display = {
+                width: 0
+            }
+        }
         return(
-            <div>
-                <p>{this.state.test}</p>
-            </div>
+            <section style={display} className="project-section">
+                <div className="overflow">
+                    <div>
+                        <div>
+                            <h2>Projects</h2>
+                        </div>
+                    </div>
+                    <ul>
+
+                    </ul>
+                </div>
+            </section>
         )
     }
 }
+
+export const mapStateToProps = (state) => ({
+    toggleProjectDisplay: state.toggleProjectDisplay
+})
+
+export default connect(mapStateToProps)(ProjectDisplay)
