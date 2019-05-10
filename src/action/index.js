@@ -30,3 +30,18 @@ export const addNewPalette = (palette) => ({
     type: "ADD_PALETTE", 
     palette
 })
+
+export const deleteProject = (id) => ({
+    type: "DELETE_PROJECT",
+    id
+})
+
+export const deletePalette = (id) => ({
+    type: "DELETE_Palette",
+    id
+})
+
+export const deleteProjectPalettes = (projectId) => ({
+    type: "DELETE_PROJECT_PALETTE",
+    projectId
+})
