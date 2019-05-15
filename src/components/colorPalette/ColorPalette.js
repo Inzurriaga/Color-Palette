@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { generateColorPalette, toggleLock } from "../../action"
+import { toggleLock } from "../../action"
 
 
 export class ColorPalette extends Component{
@@ -33,7 +33,6 @@ export const mapStateToProps = (state) => ({
 })
 
 export const mapDispatchToProps = (dispatch) => ({
-    generateColorPalette: palette => dispatch(generateColorPalette(palette)),
     toggleLock: index => dispatch(toggleLock(index))
 })
 

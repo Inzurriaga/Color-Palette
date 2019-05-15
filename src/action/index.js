@@ -41,7 +41,7 @@ export const deleteProjectInState = (id) => ({
 })
 
 export const deletePaletteInState = (id) => ({
-    type: "DELETE_Palette",
+    type: "DELETE_PALETTE",
     id
 })
 

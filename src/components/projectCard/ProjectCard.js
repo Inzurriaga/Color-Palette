@@ -67,7 +67,7 @@ export class ProjectCard extends Component{
     }
 }
 
-const mapDispatchToProps = (dispatch) => ({
+export const mapDispatchToProps = (dispatch) => ({
     deletePalette: id => dispatch(deletePalette(id)),
     deleteProject: id => dispatch(deleteProject(id)),
     displayProjectPalette: palette => dispatch(displayProjectPalette(palette))

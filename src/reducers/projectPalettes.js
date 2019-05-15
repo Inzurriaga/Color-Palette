@@ -5,14 +5,16 @@ export const projectPalettes = (state=[], action) => {
         case "ADD_PALETTE":
             const addPalette = [...state, action.palette]
             return addPalette
-        case "DELETE_Palette":
+        case "DELETE_PALETTE":
             const deletePalette = state.filter(palette => {
                 return palette.id !== action.id
             })
             return deletePalette
         case "DELETE_PROJECT_PALETTE":
             const deleteProjectPalette = state.filter(palette => {
-                return palette.projectsId !== action.projectId
+                console.log(palette.project_id)
+                console.log(action.projectId)
+                return palette.project_id !== action.projectId
             })
             return deleteProjectPalette;
         default: 

@@ -1,9 +1,8 @@
 import React from "react"
 import { shallow } from "enzyme"
 import { ColorPalette, mapDispatchToProps, mapStateToProps } from "./ColorPalette"
-import { generateColorPalette, toggleLock } from "../../action"
+import { toggleLock } from "../../action"
 
-const mockGenerateColorPalette = jest.fn()
 const mockToggleLock = jest.fn()
 const mockColorPalette = [{
     hex: "#000000",
@@ -26,8 +25,7 @@ describe("App", () => {
     let wrapper;
     beforeEach(() => {
         wrapper = shallow(
-            <ColorPalette generateColorPalette={mockGenerateColorPalette}
-                        toggleLock={mockToggleLock}
+            <ColorPalette toggleLock={mockToggleLock}
                         colorPalette={mockColorPalette}/>
         )
     })
@@ -35,24 +33,13 @@ describe("App", () => {
         it("should match snap shot", () => {
             expect(wrapper).toMatchSnapshot()
         })
-        it("should invoke generateColorPalette when button is click", () => {
-
-        })
         it("should invoke toggleLock when button is click", () => {
-            
+            wrapper.find("button").at(1).simulate("click")
+            expect(mockToggleLock).toHaveBeenCalled()
         })
     })
     describe("mapDispatchToProps", () => {
-        it('calls dispatch with an generateInitialColorPalette action when called', () => {
-            const mockDispatch = jest.fn()
-            const actionToDispatch = generateColorPalette(mockColorPalette)
-
-            const mappedProps = mapDispatchToProps(mockDispatch)
-            mappedProps.generateColorPalette(mockColorPalette)
-      
-            expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
-          })
-          it('calls dispatch with an getProjects action when called', () => {
+          it('calls dispatch with an toggleLock action when called', () => {
             const mockDispatch = jest.fn()
             const actionToDispatch = toggleLock(1)
       

@@ -42,7 +42,7 @@
     ],
     "collectCoverageFrom": [
       "src/**/*.js",
-      "!src/reducers/index.js",
+      "!src/reducers/rootReducer.js",
       "!src/index.js",
       "!src/setupTest.js",
       "!src/serviceWorker.js"
