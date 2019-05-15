@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App App should match snap shot 1`] = `
+<div
+  className="colorPalette-section"
+>
+  <div
+    className="color"
+    id={0}
+    key="0"
+    style={
+      Object {
+        "backgroundColor": "#000000",
+      }
+    }
+  >
+    <button
+      onClick={[Function]}
+    >
+      lock
+    </button>
+    <p>
+      #000000
+    </p>
+  </div>
+  <div
+    className="color"
+    id={1}
+    key="1"
+    style={
+      Object {
+        "backgroundColor": "#000000",
+      }
+    }
+  >
+    <button
+      onClick={[Function]}
+    >
+      lock
+    </button>
+    <p>
+      #000000
+    </p>
+  </div>
+  <div
+    className="color"
+    id={2}
+    key="2"
+    style={
+      Object {
+        "backgroundColor": "#000000",
+      }
+    }
+  >
+    <button
+      onClick={[Function]}
+    >
+      lock
+    </button>
+    <p>
+      #000000
+    </p>
+  </div>
+  <div
+    className="color"
+    id={3}
+    key="3"
+    style={
+      Object {
+        "backgroundColor": "#000000",
+      }
+    }
+  >
+    <button
+      onClick={[Function]}
+    >
+      lock
+    </button>
+    <p>
+      #000000
+    </p>
+  </div>
+  <div
+    className="color"
+    id={4}
+    key="4"
+    style={
+      Object {
+        "backgroundColor": "#000000",
+      }
+    }
+  >
+    <button
+      onClick={[Function]}
+    >
+      lock
+    </button>
+    <p>
+      #000000
+    </p>
+  </div>
+</div>
+`;

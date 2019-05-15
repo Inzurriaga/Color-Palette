@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { toggleSaveModal, addNewPalette, addNewProject } from "../../action"
+import { toggleSaveModal } from "../../action";
+import { postPalette } from "../../thunks/postPalette";
+import { postProject } from "../../thunks/postProject"
+
 
 export class SaveModal extends Component{
     constructor(){
@@ -37,28 +40,26 @@ export class SaveModal extends Component{
     createNewPalette = (id) => {
         const { paletteName } = this.state
         const palette = this.props.colorPalette.reduce((acc, color, index) => {
-            acc[`color${index+1}`] = color
+            acc[`color${index+1}`] = color.hex
             return acc
         }, {})
-        const newPalette = {...palette, name: paletteName, id: Date.now(), projectsId: id }
-        this.props.addNewPalette(newPalette)
+        const newPalette = {...palette, name: paletteName }
+        this.props.postPalette(id, newPalette)
     }
 
-    createNewProject = () => {
+    createNewProject = async () => {
         const { projectName } = this.state
-        const id = Date.now()
         const newProject = {
-            id,
             name: projectName
         }
-        this.createNewPalette(id)
-        this.props.addNewProject(newProject)
+        let project = await this.props.postProject(newProject)
+        await this.createNewPalette(project.id )
     }
 
     render(){
         let colorPalette = this.props.colorPalette.map((color, index) => {
             return (
-                <div key={index} className="color" style={{"backgroundColor": color}}>
+                <div key={index} className="color" style={{"backgroundColor": color.hex}}>
 
                 </div>
             )
@@ -89,8 +90,8 @@ export class SaveModal extends Component{
 
 export const mapDispatchToProps = (dispatch) => ({
     toggleSaveModal: () => dispatch(toggleSaveModal()),
-    addNewPalette: (projectId, palette) => dispatch(addNewPalette(projectId, palette)),
-    addNewProject: project => dispatch(addNewProject(project))
+    postPalette: (projectId, palette) => dispatch(postPalette(projectId, palette)),
+    postProject: project => dispatch(postProject(project))
 })
 
 export const mapStateToProps = (state) => ({

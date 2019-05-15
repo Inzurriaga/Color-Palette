@@ -3,21 +3,16 @@ import { connect } from "react-redux";
 import { toggleProjectDisplay, generateColorPalette, toggleSaveModal } from "../../action"
 
 export  class Header extends Component{
-    constructor(){
-        super();
-        this.state = {
-            test: "hello im a test"
-        }
-    }
 
     render(){
+        const colorPalette = this.props.colorPalette
         return(
             <header>
                 <div>
                     <h1>Palette Picker</h1>
                 </div>
                 <nav>
-                    <button className="refresh" onClick={this.props.generateColorPalette}></button>
+                    <button className="refresh" onClick={() => {this.props.generateColorPalette(colorPalette)}}></button>
                     <button className="save" onClick={this.props.toggleSaveModal}></button>
                     <button className="projects" onClick={this.props.toggleProjectDisplay}></button>
                 </nav>
@@ -26,11 +21,15 @@ export  class Header extends Component{
     }
 }
 
+export const mapStateToProps = (state) => ({
+    colorPalette: state.colorPalette
+})
+
 export const mapDispatchToProps = (dispatch) => ({
     toggleProjectDisplay: () => dispatch(toggleProjectDisplay()),
-    generateColorPalette: () => dispatch(generateColorPalette()),
+    generateColorPalette: palette => dispatch(generateColorPalette(palette)),
     toggleSaveModal: () => dispatch(toggleSaveModal())
 })
 
 
-export default connect(null, mapDispatchToProps)(Header)
+export default connect(mapStateToProps, mapDispatchToProps)(Header)

@@ -5,9 +5,9 @@ html, body, #root {
     font-family: 'Fredoka One', cursive;
 }
 
-@import "./component/app/App";
-@import "./component/header/Header";
-@import "./component/colorPalette/ColorPalette";
-@import "./component/projectDisplay/ProjectDisplay";
-@import "./component/modal/saveModal";
-@import "./component/projectCard/ProjectCard";
+@import "./components/app/App";
+@import "./components/header/Header";
+@import "./components/colorPalette/ColorPalette";
+@import "./components/projectDisplay/ProjectDisplay";
+@import "./components/modal/saveModal";
+@import "./components/projectCard/ProjectCard";

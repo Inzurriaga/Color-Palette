@@ -12,7 +12,7 @@ export class ProjectDisplay extends Component{
                 name: projects.name,
                 id: projects.id,
                 palette: projectPalettes.filter(palette => {
-                    return palette.projectsId === projects.id
+                    return palette["project_id"] === projects.id
                 })
             }
         })
@@ -27,7 +27,7 @@ export class ProjectDisplay extends Component{
             }
         }else{
             display = {
-                width: "1px"
+                width: 0
             }
         }
 

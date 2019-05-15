@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import {CopyToClipboard} from 'react-copy-to-clipboard';
-import { deletePalette, deleteProject, deleteProjectPalettes } from "../../action"
+import { deletePalette } from "../../thunks/deletePalette";
+import { deleteProject } from "../../thunks/deleteProject";
+import { displayProjectPalette } from "../../action";
 
 export class ProjectCard extends Component{
 
@@ -10,15 +12,25 @@ export class ProjectCard extends Component{
     }
 
     deleteProject = () => {
-        this.props.deleteProjectPalettes(this.props.project.id)
         this.props.deleteProject(this.props.project.id)
+    }
+
+    displayPalette = (palette) => {
+        let projectPalette = []
+        for(var i = 0; i < 5; i++){
+            projectPalette.push({
+                hex: palette[`color${i+1}`],
+                lock: false
+            })
+        }
+        this.props.displayProjectPalette(projectPalette)
     }
 
     render(){
         let { name, palette } = this.props.project
         let palettes = palette.map(color => {
             return <div key={color.id}>
-                        <h4>{color.name}</h4>
+                        <h4 onClick={() => {this.displayPalette(color)}}>{color.name}</h4>
                         <button onClick={() => {this.deletePalette(color.id)}}></button>
                         <div className="palette-display">
                             <CopyToClipboard text={color.color1}>
@@ -58,6 +70,6 @@ export class ProjectCard extends Component{
 const mapDispatchToProps = (dispatch) => ({
     deletePalette: id => dispatch(deletePalette(id)),
     deleteProject: id => dispatch(deleteProject(id)),
-    deleteProjectPalettes: id => dispatch(deleteProjectPalettes(id))
+    displayProjectPalette: palette => dispatch(displayProjectPalette(palette))
 })
 export default connect(null, mapDispatchToProps)(ProjectCard)
