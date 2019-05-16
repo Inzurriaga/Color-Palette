@@ -4,6 +4,7 @@ import { toggleLock } from "../../action"
 
 
 export class ColorPalette extends Component{
+    
     render(){
         return(
             <div className="colorPalette-section">

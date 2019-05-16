@@ -22,6 +22,7 @@ const mockColorPalette = [{
 }]
 
 describe("App", () => {
+
     let wrapper;
     beforeEach(() => {
         wrapper = shallow(
@@ -29,16 +30,21 @@ describe("App", () => {
                         colorPalette={mockColorPalette}/>
         )
     })
+
     describe("App", () => {
+
         it("should match snap shot", () => {
             expect(wrapper).toMatchSnapshot()
         })
+
         it("should invoke toggleLock when button is click", () => {
             wrapper.find("button").at(1).simulate("click")
             expect(mockToggleLock).toHaveBeenCalled()
         })
+
     })
     describe("mapDispatchToProps", () => {
+
           it('calls dispatch with an toggleLock action when called', () => {
             const mockDispatch = jest.fn()
             const actionToDispatch = toggleLock(1)
@@ -48,8 +54,10 @@ describe("App", () => {
       
             expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
           })
+
     })
     describe("mapStateToProps", () => {
+
         it("should only return waht is needed from the store", () => {
             const mockStore = {
                 colorPalette: [{},{},{}],
@@ -61,5 +69,6 @@ describe("App", () => {
             const result = mapStateToProps(mockStore)
             expect(result).toEqual(expected)
         })
+        
     })
 })

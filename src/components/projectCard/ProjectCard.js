@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import {CopyToClipboard} from 'react-copy-to-clipboard';
-import { deletePalette } from "../../thunks/deletePalette";
-import { deleteProject } from "../../thunks/deleteProject";
-import { displayProjectPalette } from "../../action";
+import React, { Component } from "react"
+import { connect } from "react-redux"
+import {CopyToClipboard} from 'react-copy-to-clipboard'
+import { deletePalette } from "../../thunks/deletePalette"
+import { deleteProject } from "../../thunks/deleteProject"
+import { displayProjectPalette } from "../../action"
 
 export class ProjectCard extends Component{
 
@@ -29,9 +29,9 @@ export class ProjectCard extends Component{
     render(){
         let { name, palette } = this.props.project
         let palettes = palette.map(color => {
-            return <div key={color.id}>
+            return <div className="palette" key={color.id}>
                         <h4 onClick={() => {this.displayPalette(color)}}>{color.name}</h4>
-                        <button onClick={() => {this.deletePalette(color.id)}}></button>
+                        <button className="delete-palette" onClick={() => {this.deletePalette(color.id)}}>X</button>
                         <div className="palette-display">
                             <CopyToClipboard text={color.color1}>
                                 <div style={{"backgroundColor": color.color1}} className="color-display"></div>
@@ -55,7 +55,7 @@ export class ProjectCard extends Component{
             <article>
                 <div className="project-name">
                     <h3>{name}</h3>
-                    <button onClick={this.deleteProject}></button>
+                    <button onClick={this.deleteProject}>X</button>
                 </div>
                 <div>
                     {
@@ -72,4 +72,5 @@ export const mapDispatchToProps = (dispatch) => ({
     deleteProject: id => dispatch(deleteProject(id)),
     displayProjectPalette: palette => dispatch(displayProjectPalette(palette))
 })
+
 export default connect(null, mapDispatchToProps)(ProjectCard)

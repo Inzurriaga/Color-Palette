@@ -30,6 +30,7 @@ const mockProject = {
 }
 
 describe("App", () => {
+
     let wrapper;
     beforeEach(() => {
         wrapper = shallow(
@@ -39,50 +40,54 @@ describe("App", () => {
                         project={mockProject}/>
         )
     })
+
     describe("App", () => {
+
         it("should match snap shot", () => {
             expect(wrapper).toMatchSnapshot()
         })
+
         it("should invoke deletePalette when delete palette button is click", () => {
             wrapper.find("button").at(1).simulate("click")
             expect(mockDeletePalette).toHaveBeenCalled()
         })
+
         it("should invoke deleteProject when delete project button is click", () => {
             wrapper.find("button").at(0).simulate("click")
             expect(mockDeleteProject).toHaveBeenCalled()
         })
+
         it("should invoke deleteProject when delete project button is click", () => {
             wrapper.find("h4").at(0).simulate("click")
             expect(mockDisplayProjectPalette).toHaveBeenCalled()
         })
+
     })
+
     describe("mapDispatchToProps", () => {
+
         it('calls dispatch with an deletePalette action when called', () => {
             const mockDispatch = jest.fn()
             const actionToDispatch = deletePalette(2)
-      
             const mappedProps = mapDispatchToProps(mockDispatch)
             mappedProps.deletePalette(2)
-      
             expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
           })
-          it('calls dispatch with an deleteProject action when called', () => {
+
+        it('calls dispatch with an deleteProject action when called', () => {
             const mockDispatch = jest.fn()
             const actionToDispatch = deleteProject(2)
-      
             const mappedProps = mapDispatchToProps(mockDispatch)
             mappedProps.deleteProject(2)
-      
             expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
-          })
-          it('calls dispatch with an displayProjectPalette action when called', () => {
+        })
+
+        it('calls dispatch with an displayProjectPalette action when called', () => {
             const mockDispatch = jest.fn()
             const actionToDispatch = displayProjectPalette(mockPalette)
-      
             const mappedProps = mapDispatchToProps(mockDispatch)
             mappedProps.displayProjectPalette(mockPalette)
-      
             expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
-          })
+        })
     })
 })

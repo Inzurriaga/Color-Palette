@@ -10,10 +10,13 @@ exports[`App App should match snap shot 1`] = `
     </h3>
     <button
       onClick={[Function]}
-    />
+    >
+      X
+    </button>
   </div>
   <div>
     <div
+      className="palette"
       key="32"
     >
       <h4
@@ -22,8 +25,11 @@ exports[`App App should match snap shot 1`] = `
         adsf
       </h4>
       <button
+        className="delete-palette"
         onClick={[Function]}
-      />
+      >
+        X
+      </button>
       <div
         className="palette-display"
       >

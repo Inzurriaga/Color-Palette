@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { toggleSaveModal } from "../../action";
-import { postPalette } from "../../thunks/postPalette";
+import React, { Component } from "react"
+import { connect } from "react-redux"
+import { toggleSaveModal } from "../../action"
+import { postPalette } from "../../thunks/postPalette"
 import { postProject } from "../../thunks/postProject"
 
 

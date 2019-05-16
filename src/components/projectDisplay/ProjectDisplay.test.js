@@ -31,6 +31,7 @@ const mockProjectPalettes = [{
 }]
 
 describe("App", () => {
+
     let wrapper;
     beforeEach(() => {
         wrapper = shallow(
@@ -39,15 +40,12 @@ describe("App", () => {
                         projects={mockProjects}/>
         )
     })
+
     describe("App", () => {
+        
         it("should match snap shot", () => {
             expect(wrapper).toMatchSnapshot()
         })
-    })
-    describe("mapDispatchToProps", () => {
-
-    })
-    describe("mapStateToProps", () => {
 
     })
 })

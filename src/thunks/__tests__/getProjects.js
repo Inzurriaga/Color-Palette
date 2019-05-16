@@ -3,7 +3,7 @@ import { getProjects } from "../getProjects";
 import { addNewProject } from "../../action"
 
 describe("getProjects", () => {
-    it('calls dispatch with deletePalette', () => {
+    it('calls dispatch with getProjects', () => {
         window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
             ok: true,
             json: () => Promise.resolve({

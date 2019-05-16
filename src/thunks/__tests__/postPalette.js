@@ -3,7 +3,7 @@ import { postPalette } from "../postPalette"
 import { addNewPalette } from "../../action"
 
 describe("postPalette", () => {
-    it('calls dispatch with deletePalette', () => {
+    it('calls dispatch with postPalette', () => {
         window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
             ok: true,
             json: () => Promise.resolve({

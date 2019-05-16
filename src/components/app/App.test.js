@@ -13,6 +13,7 @@ const mockGenerateInitialColorPalette = jest.fn()
 const mockToggleSaveModal = false
 
 describe("App", () => {
+
     let wrapper;
     beforeEach(() => {
         wrapper = shallow(
@@ -23,41 +24,44 @@ describe("App", () => {
                 />
         )
     })
+
     describe("App", () => {
+
         it("should match snap shot", () => {
             expect(wrapper).toMatchSnapshot()
         })
+
     })
+
     describe("mapDispatchToProps", () => {
+        
         it('calls dispatch with an generateInitialColorPalette action when called', () => {
             const mockDispatch = jest.fn()
             const actionToDispatch = generateInitialColorPalette()
-
             const mappedProps = mapDispatchToProps(mockDispatch)
             mappedProps.generateInitialColorPalette()
-      
             expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
           })
+
           it('calls dispatch with an getProjects action when called', () => {
             const mockDispatch = jest.fn()
             const actionToDispatch = getProjects()
-      
             const mappedProps = mapDispatchToProps(mockDispatch)
             mappedProps.getProjects()
-      
             expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
           })
+
           it('calls dispatch with an getPalettes action when called', () => {
             const mockDispatch = jest.fn()
             const actionToDispatch = getPalettes()
-      
             const mappedProps = mapDispatchToProps(mockDispatch)
             mappedProps.getPalettes()
-      
             expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
           })
+
     })
     describe("mapStateToProps", () => {
+
         it("should only return waht is needed from the store", () => {
             const mockStore = {
                 colorPalette: [{},{},{}],
@@ -70,5 +74,6 @@ describe("App", () => {
             const result = mapStateToProps(mockStore)
             expect(result).toEqual(expected)
         })
+        
     })
 })

@@ -3,7 +3,7 @@ import { deleteProject } from "../deleteProject"
 import { deletePaletteInState } from "../../action"
 
 describe("deleteProject", () => {
-    it('calls dispatch with deletePalette', () => {
+    it('calls dispatch with deleteProject', () => {
         window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
             ok: true,
             json: () => Promise.resolve({

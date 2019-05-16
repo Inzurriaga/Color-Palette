@@ -3,7 +3,7 @@ import { getPalettes } from "../getPalettes";
 import { initialPalette } from "../../action"
 
 describe("getPalettes", () => {
-    it('calls dispatch with deletePalette', () => {
+    it('calls dispatch with getPalettes', () => {
         window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
             ok: true,
             json: () => Promise.resolve({
