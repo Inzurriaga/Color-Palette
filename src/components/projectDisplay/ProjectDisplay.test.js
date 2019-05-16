@@ -1,6 +1,6 @@
 import React from "react"
 import { shallow } from "enzyme"
-import { ProjectDisplay, mapDispatchToProps, mapStateToProps } from "./ProjectDisplay"
+import { ProjectDisplay } from "./ProjectDisplay"
 
 const mockToggleProjectDisplay = false;
 const mockProjects = [{
