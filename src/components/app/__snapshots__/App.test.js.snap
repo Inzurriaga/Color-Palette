@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App App should match snap shot 1`] = `
+<div
+  className="App"
+>
+  <ConnectFunction />
+  <ConnectFunction />
+  <ConnectFunction />
+</div>
+`;

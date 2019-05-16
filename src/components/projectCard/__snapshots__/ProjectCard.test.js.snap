@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App App should match snap shot 1`] = `
+<article>
+  <div
+    className="project-name"
+  >
+    <h3>
+      color
+    </h3>
+    <button
+      onClick={[Function]}
+    >
+      X
+    </button>
+  </div>
+  <div>
+    <div
+      className="palette"
+      key="32"
+    >
+      <h4
+        onClick={[Function]}
+      >
+        adsf
+      </h4>
+      <button
+        className="delete-palette"
+        onClick={[Function]}
+      >
+        X
+      </button>
+      <div
+        className="palette-display"
+      >
+        <CopyToClipboard
+          text="#2a01bd"
+        >
+          <div
+            className="color-display"
+            style={
+              Object {
+                "backgroundColor": "#2a01bd",
+              }
+            }
+          />
+        </CopyToClipboard>
+        <CopyToClipboard
+          text="#4e2b30"
+        >
+          <div
+            className="color-display"
+            style={
+              Object {
+                "backgroundColor": "#4e2b30",
+              }
+            }
+          />
+        </CopyToClipboard>
+        <CopyToClipboard
+          text="#235e2b"
+        >
+          <div
+            className="color-display"
+            style={
+              Object {
+                "backgroundColor": "#235e2b",
+              }
+            }
+          />
+        </CopyToClipboard>
+        <CopyToClipboard
+          text="#c8604a"
+        >
+          <div
+            className="color-display"
+            style={
+              Object {
+                "backgroundColor": "#c8604a",
+              }
+            }
+          />
+        </CopyToClipboard>
+        <CopyToClipboard
+          text="#3410f7"
+        >
+          <div
+            className="color-display"
+            style={
+              Object {
+                "backgroundColor": "#3410f7",
+              }
+            }
+          />
+        </CopyToClipboard>
+      </div>
+    </div>
+  </div>
+</article>
+`;

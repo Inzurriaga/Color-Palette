@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App App should match snap shot 1`] = `
+<header>
+  <div>
+    <h1>
+      Palette Picker
+    </h1>
+  </div>
+  <nav>
+    <button
+      className="refresh"
+      onClick={[Function]}
+    />
+    <button
+      className="save"
+      onClick={[MockFunction]}
+    />
+    <button
+      className="projects"
+      onClick={[MockFunction]}
+    />
+  </nav>
+</header>
+`;

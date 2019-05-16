@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App App should match snap shot 1`] = `
+<section
+  className="project-section"
+  style={
+    Object {
+      "width": 0,
+    }
+  }
+>
+  <div
+    className="overflow"
+  >
+    <div
+      className="project-title"
+    >
+      <div>
+        <h2>
+          Projects
+        </h2>
+      </div>
+    </div>
+    <ul>
+      <ConnectFunction
+        key="3"
+        project={
+          Object {
+            "id": 3,
+            "name": "hello",
+            "palette": Array [
+              Object {
+                "color1": "#2a01bd",
+                "color2": "#4e2b30",
+                "color3": "#235e2b",
+                "color4": "#c8604a",
+                "color5": "#3410f7",
+                "id": 32,
+                "name": "adsf",
+                "project_id": 3,
+              },
+              Object {
+                "color1": "#2a01bd",
+                "color2": "#4e2b30",
+                "color3": "#235e2b",
+                "color4": "#c8604a",
+                "color5": "#3410f7",
+                "id": 32,
+                "name": "adsf",
+                "project_id": 3,
+              },
+            ],
+          }
+        }
+      />
+      <ConnectFunction
+        key="4"
+        project={
+          Object {
+            "id": 4,
+            "name": "color",
+            "palette": Array [],
+          }
+        }
+      />
+    </ul>
+  </div>
+</section>
+`;
