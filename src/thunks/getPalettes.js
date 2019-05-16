@@ -2,7 +2,7 @@ import { initialPalette } from "../action"
 export const getPalettes = () => {
     return async (dispatch) => {
         try{
-            const response = await fetch("http://localhost:3001/api/palettes")
+            const response = await fetch(process.env.REACT_APP_BACKEND_URL + "/api/palettes")
             if(!response.ok) {
                 throw Error(response.statusText)
               }
