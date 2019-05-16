@@ -2,6 +2,18 @@
     grid-area: palette;
     display: flex;
     flex-direction: row;
+    button {
+        top: 20px;
+        left: 20px;
+        position: absolute;
+        outline: none;
+        background: none;
+        border: none;
+    }
+    img {
+        height: 20px;
+        width: 20px;
+    }
 }
 
 // hello world
