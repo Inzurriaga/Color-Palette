@@ -2,6 +2,9 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "10.3.0"
+  },
   "dependencies": {
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.13.0",
