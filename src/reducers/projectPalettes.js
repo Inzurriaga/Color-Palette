@@ -12,8 +12,6 @@ export const projectPalettes = (state=[], action) => {
             return deletePalette
         case "DELETE_PROJECT_PALETTE":
             const deleteProjectPalette = state.filter(palette => {
-                console.log(palette.project_id)
-                console.log(action.projectId)
                 return palette.project_id !== action.projectId
             })
             return deleteProjectPalette;
