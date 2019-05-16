@@ -6,7 +6,7 @@ export const deletePalette = (id) => {
     }
     return async (dispatch) => {
         try{
-            const response = await fetch(`http://localhost:3001/api/projects/palettes/${id}`, method)
+            const response = await fetch(process.env.REACT_APP_BACKEND_URL + `/api/${id}`, method)
             if(!response.ok) {
                 throw Error(response.statusText)
               }
