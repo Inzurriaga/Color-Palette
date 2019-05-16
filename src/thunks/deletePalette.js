@@ -7,6 +7,9 @@ export const deletePalette = (id) => {
     return async (dispatch) => {
         try{
             const response = await fetch(`http://localhost:3001/api/projects/palettes/${id}`, method)
+            if(!response.ok) {
+                throw Error(response.statusText)
+              }
             dispatch(deletePaletteInState(id))
         }catch(error){
 
