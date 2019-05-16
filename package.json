@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "engines": {
-    "node": "10.3.0"
+    "node": "10.11.0"
   },
   "dependencies": {
     "enzyme": "^3.9.0",
